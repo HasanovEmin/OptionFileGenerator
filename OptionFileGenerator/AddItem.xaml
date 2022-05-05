@@ -1,0 +1,48 @@
+﻿<Window x:Class="OptionFileGenerator.AddItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OptionFileGenerator"
+        mc:Ignorable="d"
+        Title="Add/Edit Label" Height="220" Width="455" MaxWidth="455" MaxHeight="220">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Content="Id" />
+                <TextBox x:Name="TxtId" Width="300" Height="24" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Text" />
+                <TextBox x:Name="TxtText" Width="300" Height="24"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Attribute" Margin="0,0,140,0"/>
+                <CheckBox x:Name="chkAtrrib" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnEditCoords" Content="Edit coordinates" Click="btnEditCoords_Click"/>
+                <Label Content="X" Margin="20,0,0,0"/>
+                <TextBox x:Name="TxtXCoord" Width="60" Height="24" Margin="0,0,24,0" IsReadOnly="True" />
+                <Label Content="Y" />
+                <TextBox x:Name="TxtYCoord" Width="60" Height="24" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Charh" Margin="85,0,0,0"/>
+                <TextBox x:Name="TxtCharh" Width="60" Height="24"  />
+                <Label Content="Angle" />
+                <TextBox x:Name="TxtAngle" Width="60" Height="24" />
+            </StackPanel>
+        </StackPanel>
+        <Button Margin="5" x:Name="btnApply" Content="Apply" Grid.Column="0" Grid.Row="1" Height="20" Width="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="btnApply_Click" />
+        <Button Margin="5" x:Name="btnCancel" Content="Cancel" Grid.Column="1" Grid.Row="1" Height="20" Width="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="btnCancel_Click" />
+    </Grid>
+</Window>

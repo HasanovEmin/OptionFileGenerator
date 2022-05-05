@@ -1,0 +1,92 @@
+﻿<Window x:Name="window" x:Class="OptionFileGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OptionFileGenerator"
+        mc:Ignorable="d"
+        Title="IsoHelper" Height="633" Width="786">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="350" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            
+            
+        </Grid.RowDefinitions>
+        <Canvas Margin="0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" x:Name="CanvasMain" MouseDown="CanvasMain_MouseDown" SizeChanged="CanvasMain_SizeChanged" Loaded="CanvasMain_Loaded" QueryCursor="CanvasMain_QueryCursor"/>
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="screenLabel" />
+                <Label x:Name="canvasLabel"/>
+                <Label x:Name="currentCoordsLabel"/>
+                <Label x:Name="currentCHCoordsLabel"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Grid.Column="0" Margin="5,0,5,0" x:Name="CmbSizes" Width="50" IsReadOnly="True" SelectionChanged="CmbSizes_SelectionChanged" Loaded="CmbSizes_Loaded"/>
+                    <Button Grid.Column="1" x:Name="btnAddBack" Content="Add Backingsheet" Click="btnAddBack_Click"/>
+                    <Button Grid.Column="3" x:Name="btnImport" Content="Import" Click="btnImport_Click"/>
+                    <Button Grid.Column="4" Margin="5,0,5,0" x:Name="btnExport" Content="Export" HorizontalAlignment="Right" Click="btnExport_Click"/>
+                </Grid>
+                
+            </StackPanel>
+            
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+            <ListView x:Name="listView" Height="500" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="X" Width="50" DisplayMemberBinding="{Binding XCoord}"/>
+                        <GridViewColumn Header="Y" Width="50" DisplayMemberBinding="{Binding YCoord}"/>
+                        <GridViewColumn Header="Text" Width="120" DisplayMemberBinding="{Binding Text}"/>
+                        <GridViewColumn Header="Att" Width="25" DisplayMemberBinding="{Binding Attribute}"/>
+                        <GridViewColumn Header="Charh" Width="40" DisplayMemberBinding="{Binding Charh}"/>
+                        <GridViewColumn Header="Angle" Width="40" DisplayMemberBinding="{Binding Angle}"/>
+
+
+
+
+                    </GridView>
+                    
+                </ListView.View>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Clear All" Click="ClearAll_Click">
+                            
+                        </MenuItem>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+            </ListView>
+
+            <StackPanel Orientation="Horizontal">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnEdit" Content="Edit" Grid.Column="0" Margin="5,0,5,0" Click="btnEdit_Click"/>
+                    <Button x:Name="btnDelete" Content="Delete" Grid.Column="3" Margin="5,0" Click="btnDelete_Click"/>
+                </Grid>
+                
+            </StackPanel>
+           
+        </StackPanel>
+    </Grid>
+
+
+</Window>
