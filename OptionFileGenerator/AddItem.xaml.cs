@@ -24,20 +24,20 @@ namespace OptionFileGenerator
             //NumberFormatInfo provider = new NumberFormatInfo();
             //provider.NumberDecimalSeparator = ".";
             TxtId.Text = (ItemHolder.itemCollection.Count + 1).ToString();
-            TxtXCoord.Text = Worker.ConverToString(Worker.XCoord);
-            TxtYCoord.Text = Worker.ConverToString(Worker.YCoord);
+            TxtXCoord.Text = Worker.ConvertToString(Worker.XCoord);
+            TxtYCoord.Text = Worker.ConvertToString(Worker.YCoord);
             Item item = new Item();
-            TxtCharh.Text = Worker.ConverToString(item.Charh);
-            TxtAngle.Text = Worker.ConverToString(item.Angle);
+            TxtCharh.Text = Worker.ConvertToString(item.Charh);
+            TxtAngle.Text = Worker.ConvertToString(item.Angle);
             
         }
 
         private void btnApply_Click(object sender, RoutedEventArgs e)
         {
-            double xcoord = Worker.ConverToDouble(TxtXCoord.Text);
-            double ycoord = Worker.ConverToDouble(TxtYCoord.Text);
-            double charh = Worker.ConverToDouble(TxtCharh.Text);
-            double angle = Worker.ConverToDouble(TxtAngle.Text);
+            double xcoord = Worker.ConvertToDouble(TxtXCoord.Text);
+            double ycoord = Worker.ConvertToDouble(TxtYCoord.Text);
+            double charh = Worker.ConvertToDouble(TxtCharh.Text);
+            double angle = Worker.ConvertToDouble(TxtAngle.Text);
 
             if (TxtText.Text == OldTxtText 
                 && chkAtrrib.IsChecked == OldAttribute 
@@ -98,10 +98,10 @@ namespace OptionFileGenerator
             oldCharh = charh;
 
 
-            TxtXCoord.Text = Worker.ConverToString(xCoord);
-            TxtYCoord.Text = Worker.ConverToString(yCoord);
-            TxtCharh.Text = Worker.ConverToString(charh);
-            TxtAngle.Text = Worker.ConverToString(angle);
+            TxtXCoord.Text = Worker.ConvertToString(xCoord);
+            TxtYCoord.Text = Worker.ConvertToString(yCoord);
+            TxtCharh.Text = Worker.ConvertToString(charh);
+            TxtAngle.Text = Worker.ConvertToString(angle);
 
         }
 
@@ -109,8 +109,8 @@ namespace OptionFileGenerator
         {
             EditCanvas editCanvas = new EditCanvas();
             editCanvas.ShowDialog();
-            TxtXCoord.Text = Worker.ConverToString(Worker.XCoord);
-            TxtYCoord.Text = Worker.ConverToString(Worker.YCoord);
+            TxtXCoord.Text = Worker.ConvertToString(Worker.XCoord);
+            TxtYCoord.Text = Worker.ConvertToString(Worker.YCoord);
         }
     }
 }

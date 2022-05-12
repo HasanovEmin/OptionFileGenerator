@@ -39,13 +39,13 @@ namespace OptionFileGenerator
                             string angle = string.Empty;
                             if (item.Angle != 0)
                             {
-                                angle = $"Angle {Worker.ConverToString(item.Angle)}";
+                                angle = $"Angle {Worker.ConvertToString(item.Angle)}";
                             }
                             
 
-                            string xcoord = Worker.ConverToString(item.XCoord);
-                            string ycoord = Worker.ConverToString(item.YCoord);
-                            string charh = Worker.ConverToString(item.Charh);
+                            string xcoord = Worker.ConvertToString(item.XCoord);
+                            string ycoord = Worker.ConvertToString(item.YCoord);
+                            string charh = Worker.ConvertToString(item.Charh);
                             sw.WriteLine($"TextPosition {text} X {xcoord}mm Y {ycoord}mm CharHeight {charh}mm {angle}");
 
 

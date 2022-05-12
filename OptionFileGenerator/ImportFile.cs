@@ -44,9 +44,9 @@ namespace OptionFileGenerator
                         {
                             
 
-                            double xcoord = Worker.ConverToDouble(formatedList[1]);
-                            double ycoord = Worker.ConverToDouble(formatedList[2]);
-                            double charh = Worker.ConverToDouble(formatedList[3]);
+                            double xcoord = Worker.ConvertToDouble(formatedList[1]);
+                            double ycoord = Worker.ConvertToDouble(formatedList[2]);
+                            double charh = Worker.ConvertToDouble(formatedList[3]);
                             //
                             try
                             {

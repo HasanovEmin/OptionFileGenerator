@@ -261,17 +261,25 @@ namespace OptionFileGenerator
             return list;
         }
 
-        public static double ConverToDouble(string value)
+        public static double ConvertToDouble(string value)
         {
             value = value.Replace(',', '.');
             NumberFormatInfo provider = new NumberFormatInfo();
             provider.NumberDecimalSeparator = ".";
-            double convertedValue = Convert.ToDouble(value, provider);
+            double convertedValue;
+            if (value.Contains('.'))
+            {
+                convertedValue = Convert.ToDouble(value, provider);
+            }
+            else
+            {
+                convertedValue = double.Parse(value);
+            }
             
             return convertedValue;
         }
 
-        public static string ConverToString(double value)
+        public static string ConvertToString(double value)
         {
             
             NumberFormatInfo provider = new NumberFormatInfo();

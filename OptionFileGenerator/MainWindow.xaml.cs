@@ -168,7 +168,7 @@ namespace OptionFileGenerator
             currentCoordsLabel.Content = e.GetPosition(this).ToString();
             double x = Math.Round(e.GetPosition(this).X / Worker.CoefficientWidth, 2);
             double y = Worker.BackingsheetHeight - Math.Round(e.GetPosition(this).Y / Worker.CoefficientHeight, 2);
-            currentCHCoordsLabel.Content = $"{Worker.ConverToString(x)} x {Worker.ConverToString(y)}";
+            currentCHCoordsLabel.Content = $"{Worker.ConvertToString(x)} x {Worker.ConvertToString(y)}";
         }
 
 
